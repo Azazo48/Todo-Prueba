@@ -46,7 +46,6 @@ export async function getUserByEmail(email) {
   const [rows] = await pool.query(`SELECT * FROM users WHERE email = ?`, [
     email,
   ]);
-  // console.log(rows[0]);
   return rows[0];
 }
 
@@ -95,17 +94,4 @@ export async function shareTodo(todo_id, user_id, shared_with_id) {
   );
   return result.insertId;
 }
-/**
- * Tests for development
- */
-// console.log(await createTodo("test", "test"));
 
-// const todos = await getTodos();
-// console.log(todos);
-
-// const todoByID = await getTodo(2);
-// console.log(todoByID);
-
-// await deleteTodo(2);
-
-// await shareTodo(13, 2, 1);
